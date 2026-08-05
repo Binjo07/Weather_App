@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1> Weather Dashboard</h1>
+
+    <!-- Search Section----->
+     <div id="searchSection">
+        <input type="text" id="searchInput" placeholder="Enter City name...">
+        <button id="searchBtn">Search</button>
+ 
+     </div>
+            <button id="unitToggle">°C / °F</button>
+            <div id="suggestionsContainer" style="display: none; position: absolute; background: white; border: 1px solid #e2e8f0; border-radius: 8px; max-height: 200px; overflow-y: auto; width: 100%;"></div>
+     <div id="weatherDisplay"></div>
+
+     <h3>5-day Forcast</h3>
+     <div id="forecastContainer"></div>
+
+     <h3>Recent Searches</h3>
+     <ul id="historyList"></ul>
+
+     
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

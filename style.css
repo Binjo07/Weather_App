@@ -1,0 +1,273 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f7fafc;
+    color: #1a202c;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0.75rem;
+    color: #2d3748;
+}
+
+
+.search-section {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.search-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    background: white;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+#searchBtn {
+    padding: 0.6rem 1.2rem;
+    background: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#searchBtn:hover {
+    background: #3182ce;
+}
+
+#searchBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#unitToggle {
+    padding: 0.6rem 1.2rem;
+    background: #edf2f7;
+    color: #2d3748;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#unitToggle:hover {
+    background: #e2e8f0;
+}
+
+
+
+#suggestionsContainer {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    display: none;
+}
+
+.suggestion-item {
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.1s;
+    font-size: 0.95rem;
+}
+
+.suggestion-item:hover {
+    background: #f0f4f8;
+}
+
+.suggestion-item:active {
+    background: #e2e8f0;
+}
+
+
+
+#weatherDisplay {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+#weatherDisplay p {
+    margin-bottom: 0.4rem;
+}
+
+#weatherDisplay .city {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#weatherDisplay .temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#weatherDisplay .desc {
+    font-size: 1.2rem;
+}
+
+
+
+#forecastContainer {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.forecast-card {
+    flex: 1;
+    min-width: 80px;
+    background: white;
+    padding: 1rem 0.75rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #edf2f7;
+}
+
+.forecast-card .day {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+.forecast-card .icon {
+    font-size: 2rem;
+}
+
+.forecast-card .max {
+    font-weight: 600;
+    color: #e53e3e;
+}
+
+.forecast-card .min {
+    color: #3182ce;
+}
+
+.forecast-card .desc {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+
+
+#historyList {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#historyList li {
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+#historyList li:hover {
+    background: #edf2f7;
+}
+
+#historyList li:active {
+    background: #e2e8f0;
+}
+
+
+
+.loading {
+    color: #718096;
+    font-style: italic;
+}
+
+.error {
+    color: #e53e3e;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 500px) {
+    body {
+        padding: 1rem;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-wrapper {
+        flex-direction: column;
+    }
+
+    #unitToggle {
+        align-self: flex-start;
+    }
+
+    #forecastContainer {
+        flex-direction: column;
+    }
+
+    .forecast-card {
+        min-width: unset;
+    }
+}
