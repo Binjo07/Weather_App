@@ -2,7 +2,7 @@
 
 A clean, modular weather dashboard built with vanilla JavaScript. Search for any city, view current weather, 5-day forecast, and get auto-complete suggestions.
 
-🔗 **[Live Demo](https://your-demo-link.com)**
+🔗 **[Live Demo](https://binjo07.github.io/Weather_App/)**
 
 ---
 
